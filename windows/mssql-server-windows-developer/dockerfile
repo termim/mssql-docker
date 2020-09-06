@@ -1,4 +1,4 @@
-FROM microsoft/windowsservercore
+FROM microsoft/windows/servercore:ltsc2019
 
 LABEL maintainer "Perry Skountrianos"
 
