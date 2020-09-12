@@ -16,14 +16,22 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
+        echo on
         cd windows/mssql-server-windows-developer
         docker build . --file Dockerfile --tag my-image-name:latest
         docker info
         docker image ls
+        echo "docker ps -a"
         docker ps -a
+        echo "docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y my-image-name:latest"
         docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y my-image-name:latest
+        echo "docker ps -a"
+        docker ps -a
 
         #docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer
 
     - name: Build the Docker image
-      run: echo HELLO
+      run: |
+        echo HELLO
+        echo "docker ps -a"
+        docker ps -a
