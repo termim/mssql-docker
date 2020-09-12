@@ -17,4 +17,8 @@ jobs:
     - name: Build the Docker image
       run: |
         cd windows/mssql-server-windows-developer
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        #docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer    - name: Build the Docker image
+
+    - name: Build the Docker image
+      run: echo HELLO
