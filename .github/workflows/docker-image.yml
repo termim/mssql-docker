@@ -21,7 +21,7 @@ jobs:
         docker info
         docker image ls
         docker ps -a
-        docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y my-image-name:$(date +%s)
+        docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y my-image-name
 
         #docker run -d -p 1433:1433 -e sa_password=sqlServerPassw0rd -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer
 
